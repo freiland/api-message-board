@@ -4,16 +4,18 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_quotes
+    seed.generate_groups
   end
 
-  def generate_quotes
+  def generate_groups
     20.times do |i|
-      quote = Quote.create!(
-        author: Faker::Book.author,
-        content: Faker::Movie.quote
+      group = Group.create!(
+        name: Faker::Creature::Animal.name,
+        
       )
-      puts "Quote #{i}: Author is #{quote.author} and quotation is '#{quote.content}'."
+      
+      #puts "created #{:message}"
+      #puts "Location #{i}: City is #{location.city} in the country of '#{location.country}'."
     end
   end
 end
